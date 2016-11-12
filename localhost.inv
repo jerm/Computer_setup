@@ -1,20 +1,8 @@
 [vagrant_machine]
-vagrant-machine:2222 ansible_ssh_user=vagrant ignore_host_keys=True ec2_tag_Name=vagrant-instance bizportal_build_env=workstation
-
-[sp-corp:children]
-vagrant_machine
-
-[bizportal-webapp:children]
-vagrant_machine
+vagrant-machine:2222 ansible_ssh_user=vagrant ignore_host_keys=True ec2_tag_Name=vagrant-instance ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key
 
 [local]
 localhost ansible_connection=local
-
-[dev-intranet:children]
-vagrant_machine
-
-[security_group_vagrant-couchcluster:children]
-vagrant_machine
 
 [vagrant:children]
 vagrant_machine

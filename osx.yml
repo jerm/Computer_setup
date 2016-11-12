@@ -15,20 +15,23 @@
     #- glances
     - swaks
     - mobile-shell
+    - youtube-dl
+    - git
+    - vim
   #- name: install xcode
   #  sudo: true
   #  command: xcode-select --install
   - name: install PIP stuff
-    sudo: yes
     pip: name={{item}} state=present
 
     with_items:
     - virtualenvwrapper
     - fabric
     - boto
+    - boto3
     - awscli
-    - boto
     - ipython
+    - ipdb
 
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
