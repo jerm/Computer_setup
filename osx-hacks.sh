@@ -141,11 +141,11 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 echo "Enable tap to click (Trackpad)"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
-echo "Map bottom right Trackpad corner to right-click"
+#echo "Map bottom right Trackpad corner to right-click"
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 
-echo "Disable Safari’s thumbnail cache for History and Top Sites"
+#echo "Disable Safari’s thumbnail cache for History and Top Sites"
 #defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 echo "Enable Safari’s debug menu"
@@ -179,7 +179,7 @@ defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Fi
 # Disable Resume system-wide
 # defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
-echo "Disable the “reopen windows when logging back in” option"
+#echo "Disable the “reopen windows when logging back in” option"
 # This works, although the checkbox will still appear to be checked.
 #defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 #defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
@@ -203,7 +203,7 @@ chflags nohidden ~/Library
 
 #Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)
 # Commented out, as this is known to cause problems when saving files in Adobe Illustrator CS5 :(
-echo "0x08000100:0" > ~/.CFUserTextEncoding
+#echo "0x08000100:0" > ~/.CFUserTextEncoding
 
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done

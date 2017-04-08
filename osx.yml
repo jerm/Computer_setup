@@ -4,6 +4,32 @@
   connection: local
 
   tasks:
+  - name: install casks
+    homebrew_cask: name={{item}} state=present
+    with_items:
+    - hipchat
+    - iterm2
+    - alfred
+    - vagrant
+    - google-chrome
+    - dropbox
+    - vagrant
+    - slack
+    - spotify
+    - pritunl 
+    - keepassxc
+    #- istat-menus
+    - crashplan
+    - teamviewer
+    - winbox
+    - steam
+    - handbrake
+    - vlc
+    - transmit
+    - transmission
+    - atom
+    - simplenote
+    - hex-fiend
   - name: install brews
     homebrew: name={{item}} state=present
     with_items:
