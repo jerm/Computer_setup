@@ -4,6 +4,21 @@
   connection: local
 
   tasks:
+  - name: install brews
+    homebrew: name={{item}} state=present
+    with_items:
+    - ruby
+    - mercurial
+    - wget
+    - tmux
+    - sshuttle
+    #- glances
+    - swaks
+    - mobile-shell
+    - youtube-dl
+    - git
+    - vim
+    - keybase
   - name: install casks
     homebrew_cask: name={{item}} state=present
     with_items:
@@ -31,20 +46,7 @@
     - simplenote
     - hex-fiend
     - sonos
-  - name: install brews
-    homebrew: name={{item}} state=present
-    with_items:
-    - ruby
-    - mercurial
-    - wget
-    - tmux
-    - sshuttle
-    #- glances
-    - swaks
-    - mobile-shell
-    - youtube-dl
-    - git
-    - vim
+    - keybase
   #- name: install xcode
   #  sudo: true
   #  command: xcode-select --install
@@ -59,12 +61,15 @@
     - awscli
     - ipython
     - ipdb
+    - speedtest-cli
 
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
 
   - name: install dotfiles
     shell: bash -c "cd ~/.dotfiles; ./setup.rb"
+
+
 
   #- name: install mac apps package
   #  command: curl -s http://getmacapps.com/raw/3oitluxdna4l | sh
