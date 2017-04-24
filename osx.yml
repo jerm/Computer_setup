@@ -18,7 +18,10 @@
     - youtube-dl
     - git
     - vim
-    - keybase
+    - terraform
+    - jq
+    - cli53
+    - autojump
   - name: install casks
     homebrew_cask: name={{item}} state=present
     with_items:
@@ -33,7 +36,6 @@
     - spotify
     - pritunl 
     - keepassxc
-    #- istat-menus
     - crashplan
     - teamviewer
     - winbox
@@ -47,6 +49,7 @@
     - hex-fiend
     - sonos
     - keybase
+    #- istat-menus
   #- name: install xcode
   #  sudo: true
   #  command: xcode-select --install
