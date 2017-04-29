@@ -12,6 +12,11 @@
     - wget
     - tmux
     - sshuttle
+    - npm
+    - node
+    - readline
+    - nmap
+    - go
     #- glances
     - swaks
     - mobile-shell
