@@ -22,8 +22,10 @@
     - jq
     - cli53
     - autojump
+
   - name: install casks
     homebrew_cask: name={{item}} state=present
+    ignore_errors: true
     with_items:
     - hipchat
     - iterm2
@@ -34,7 +36,7 @@
     - vagrant
     - slack
     - spotify
-    - pritunl 
+    - pritunl
     - keepassxc
     - crashplan
     - teamviewer
@@ -48,11 +50,21 @@
     - simplenote
     - hex-fiend
     - sonos
-    - keybase
     #- istat-menus
+    tags: casks
+
+  - name: install sudo casks
+    homebrew_cask: name={{item}} state=present
+    become: true
+    become_user: root
+    ignore_errors: true
+    with_items:
+    - keybase
+    tags: sudo_casks
   #- name: install xcode
   #  sudo: true
   #  command: xcode-select --install
+
   - name: install PIP stuff
     pip: name={{item}} state=present
 
