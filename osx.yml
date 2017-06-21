@@ -82,6 +82,7 @@
     - ipython
     - ipdb
     - speedtest-cli
+    - awsebcli
 
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
