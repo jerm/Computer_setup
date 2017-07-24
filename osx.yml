@@ -55,7 +55,8 @@
     - simplenote
     - hex-fiend
     - sonos
-    #- istat-menus
+    - ngrok
+    - istat-menus
     tags: casks
 
   - name: install sudo casks

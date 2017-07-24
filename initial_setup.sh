@@ -16,9 +16,11 @@ install_homebrew(){
     #brew doctor
 }
 
-sudo easy_install pip
+[ -f /usr/local/bin/pip ] || sudo easy_install pip
+
 install_homebrew
-brew install ansible
+
+[ -f /usr/local/bin/ansible ] || brew install ansible
 
 
 #sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" pip install ansible
