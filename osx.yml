@@ -6,12 +6,12 @@
   tasks:
   - name: install homebrew taps
     homebrew_tap:
-      name: {{ item }}
+      name: "{{ item }}"
     with_items:
     - wallix/awless
 
   - name: install brews
-    homebrew: name={{item}} state=present
+    homebrew: name="{{item}}" state=present
     with_items:
     - ruby
     - mercurial
@@ -48,7 +48,7 @@
 
 
   - name: install casks
-    homebrew_cask: name={{item}} state=present
+    homebrew_cask: name="{{item}}" state=present
     ignore_errors: true
     with_items:
     - hipchat
@@ -62,7 +62,6 @@
     - pritunl
     - keepassxc
     - teamviewer
-    - winbox
     - steam
     - handbrake
     - vlc
@@ -71,13 +70,12 @@
     - atom
     - simplenote
     - hex-fiend
-    - sonos
     - ngrok
     - istat-menus
     tags: casks
 
   - name: install sudo casks
-    homebrew_cask: name={{item}} state=present
+    homebrew_cask: name="{{item}}" state=present
     # become: true
     # become_user: root
     ignore_errors: true
@@ -89,7 +87,7 @@
   #  command: xcode-select --install
 
   - name: install PIP stuff
-    pip: name={{item}} state=present
+    pip: name="{{item}}" state=present
 
     with_items:
     - virtualenvwrapper
