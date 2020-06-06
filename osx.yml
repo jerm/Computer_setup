@@ -4,6 +4,12 @@
   connection: local
 
   tasks:
+  - name: install homebrew taps
+    homebrew_tap:
+      name: {{ item }}
+    with_items:
+    - wallix/awless
+
   - name: install brews
     homebrew: name={{item}} state=present
     with_items:
@@ -25,8 +31,21 @@
     - vim
     - terraform
     - jq
+    - yq
     - cli53
     - autojump
+    - ripgrep
+    - gron
+    - autoenv
+    - ponysay
+    - htop
+    - gpg
+    - awless
+    - pipenv
+    - mypy
+    - httpie
+    - hub
+
 
   - name: install casks
     homebrew_cask: name={{item}} state=present
@@ -38,12 +57,10 @@
     - vagrant
     - google-chrome
     - dropbox
-    - vagrant
     - slack
     - spotify
     - pritunl
     - keepassxc
-    - crashplan
     - teamviewer
     - winbox
     - steam
@@ -61,8 +78,8 @@
 
   - name: install sudo casks
     homebrew_cask: name={{item}} state=present
-    become: true
-    become_user: root
+    # become: true
+    # become_user: root
     ignore_errors: true
     with_items:
     - keybase

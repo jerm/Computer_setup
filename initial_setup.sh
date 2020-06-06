@@ -22,6 +22,9 @@ install_homebrew
 
 [ -f /usr/local/bin/ansible ] || brew install ansible
 
+if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 #sudo ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" pip install ansible
 #pip install --user ansible
