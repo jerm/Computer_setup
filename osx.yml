@@ -9,10 +9,16 @@
       name: "{{ item }}"
     with_items:
     - wallix/awless
+      
+  # for some reason ansible doesn't like this in the taps section, but it works
+  # just fine if you brew it from the commandline
+  - name: install tfswitch
+    command: creates=/usr/local/bin/tfswitch brew install  warrensbox/tap/tfswitch
 
   - name: install brews
     homebrew: name="{{item}}" state=present
     with_items:
+    - bash
     - ruby
     - mercurial
     - wget
@@ -51,27 +57,27 @@
     homebrew_cask: name="{{item}}" state=present
     ignore_errors: true
     with_items:
-    - hipchat
-    - iterm2
     - alfred
-    - vagrant
-    - google-chrome
+    - atom
     - dropbox
+    - google-chrome
+    - handbrake
+    - iterm2
+    - hex-fiend
+    - istat-menus
+    - keepassxc
+    - kiwi
+    - ngrok
+    - pritunl
     - slack
     - spotify
-    - pritunl
-    - keepassxc
-    - teamviewer
+    - simplenote
     - steam
-    - handbrake
-    - vlc
+    - teamviewer
     - transmit
     - transmission
-    - atom
-    - simplenote
-    - hex-fiend
-    - ngrok
-    - istat-menus
+    - vagrant
+    - vlc
     tags: casks
 
   - name: install sudo casks
