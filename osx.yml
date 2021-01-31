@@ -9,7 +9,7 @@
       name: "{{ item }}"
     with_items:
     - wallix/awless
-      
+
   # for some reason ansible doesn't like this in the taps section, but it works
   # just fine if you brew it from the commandline
   - name: install tfswitch
@@ -51,6 +51,8 @@
     - mypy
     - httpie
     - hub
+    - gpanders/tap/ijq
+
 
 
   - name: install casks
@@ -59,24 +61,26 @@
     with_items:
     - alfred
     - atom
+    - cloudapp
     - dropbox
     - google-chrome
     - handbrake
-    - iterm2
     - hex-fiend
     - istat-menus
+    - iterm2
     - keepassxc
-    - kiwi
     - ngrok
     - pritunl
+    - signal
+    - simplenote
     - slack
     - spotify
-    - simplenote
     - steam
     - teamviewer
     - transmit
     - transmission
     - vagrant
+    - visual-studio-code
     - vlc
     tags: casks
 
