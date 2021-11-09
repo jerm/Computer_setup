@@ -20,7 +20,6 @@
     with_items:
     - bash
     - ruby
-    - mercurial
     - wget
     - tmux
     - sshuttle
@@ -29,6 +28,8 @@
     - readline
     - nmap
     - go
+    - bat
+    - bat-extras
     #- glances
     - swaks
     - mobile-shell
@@ -48,7 +49,7 @@
     - gpg
     - awless
     - pipenv
-    - mypy
+    #- mypy
     - httpie
     - hub
     - gpanders/tap/ijq
@@ -70,7 +71,7 @@
     - iterm2
     - keepassxc
     - ngrok
-    - pritunl
+    #- pritunl
     - signal
     - simplenote
     - slack
@@ -96,19 +97,20 @@
   #  sudo: true
   #  command: xcode-select --install
 
-  - name: install PIP stuff
-    pip: name="{{item}}" state=present
-
-    with_items:
-    - virtualenvwrapper
-    - fabric
-    - boto
-    - boto3
-    - awscli
-    - ipython
-    - ipdb
-    - speedtest-cli
-    - awsebcli
+#  - name: install PIP stuff
+#    pip: name="{{item}}" state=present
+#
+#    with_items:
+#    - virtualenvwrapper
+#    - fabric
+#    - boto
+#    - boto3
+#    - awscli
+#    - ipython
+#    - ipdb
+#    - speedtest-cli
+#    - awsebcli
+#    - glances
 
   - name: download dotfiles
     git: repo=https://github.com/jerm/dotfiles dest=~/.dotfiles
